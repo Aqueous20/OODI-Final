@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="page-header">Booking Form</h1>
+<p>Fill in this form with Booking Information</p>
+<form method = "POST" action = "{{url_for('Bookings')}}">
+    {{form.csrf_token}}
+    
+    <div class="a1">
+    {{ form.firstname.label }}
+    <br>
+    {{form.firstname()}}
+    </div>
+    
+    <div class="b2">
+    {{ form.lastname.label }}
+    <br>
+    {{form.lastname()}} 
+    </div>
+    
+    <div class="c3">
+    {{ form.address.label }}
+    <br>
+    {{form.address()}}
+    </div>
+    
+    <div class="d4">
+    {{ form.email.label }}
+    <br>
+    {{form.email()}} 
+    </div>
+    
+    <div class="e5">
+    {{ form.phonenumber.label }}
+    <br>
+    {{form.phonenumber()}} 
+    </div>
+    
+    <div class="g7">
+    {{ form.Date.label }}
+    <br>
+    {{form.Date()}}
+    </div>
+
+    <div class="h8">
+    {{ form.number_of_guests.label }}
+    <br>
+    {{form.number_of_guests()}}
+    <br>
+    </div>
+
+    <div class="f6">
+        {{ form.Equipment_needed.label }}
+        <br>
+        {{form.Equipment_needed(class='form-control')}}
+        <br><br>
+        <button class="btn-primary" type = "submit"> submit booking </button>
+    </div> 
+</form>
+{% endblock %}
